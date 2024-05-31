@@ -12,7 +12,7 @@ int main() {
     int v,e;
 
     limparTerminal();
-    printf("Obs -> Insira um Grafo nas seguinte condicao:\n* Quantidade de arestas de cada vertices tem que ser par.\n* Grafo conexo.\n\n");
+    printf("Obs -> Insira um Grafo nas seguintes condicoes:\n* Quantidade de arestas de cada vertices tem que ser par.\n* Grafo conexo.\n\n");
     printf("Escreva a quantidade de vertices(v) e quantidade de arestas(e) do Grafo(G): ");
     cin >> v >> e;
 
@@ -29,36 +29,23 @@ int main() {
         limparTerminal();
     }
 
-    // for(int i = 0; i < v; i++)
-    // {
-    //     for (int j = 0; j < v; j++)
-    //     {
-    //         cout << G[i][j] << ' ';
-    //     }
-    //     cout << endl;
-    // }
-
     vector<int> G_Visitado;
     int V_Atual = 0, i, teste;
 
     G_Visitado.push_back(V_Atual);
 
-    while(G_Visitado.size() <= e+1)
+    while(G_Visitado.size() < e+1)
     { 
         for(i = 0; i < v; i++)
         {   
             if(G[V_Atual][i])
             {
-                // cout << V_Atual << endl;
-                if( ver_adj(G, i, v) > 2 || ver_adj(G, V_Atual, v) < 2 )
+                if( ver_adj(G, i, v) > 1 || ver_adj(G, V_Atual, v) <= 1 )
                 {
-                    cout << 'a' << endl;
                     G[V_Atual][i] = 0;
                     G[i][V_Atual] = 0;
                     G_Visitado.push_back(i);
                     V_Atual = i;
-
-                    cin >> teste;
 
                     break;
                 }
@@ -68,7 +55,7 @@ int main() {
 
     for (int i = 0; i < G_Visitado.size(); i++)
     {
-        cout << G_Visitado[i] << ' ';
+        cout << G_Visitado[i] + 1 << ' ';
     }
     
 }
@@ -78,16 +65,6 @@ int ver_adj(vector<vector<int>>&G, int V_Prox, int v) {
     for(int i = 0; i < v; i++)  
         if(G[V_Prox][i])
             qtd_adj++;
-    // cout << 'a' << endl;
-    // for(int i = 0; i < v; i++)
-    // {
-    //     for (int j = 0; j < v; j++)
-    //     {
-    //         cout << G[i][j] << ' ';
-    //     }
-    //     cout << "\n";
-    // }
-    // cout << "\n\n";
 
     return qtd_adj;
 }
