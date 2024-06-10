@@ -5,8 +5,8 @@
 ---
 
 ## Features
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=JosuePimentel&repo=fleury&show_owner=true&theme=dark&locale=pt-br&icon_color=true)](https://github.com/JosuePimentel/fleury)
 
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=JosuePimentel&repo=fleury&show_owner=true&theme=dark&locale=pt-br&icon_color=true)](https://github.com/JosuePimentel/fleury)
 
 ---
 
