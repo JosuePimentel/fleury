@@ -7,17 +7,18 @@ using namespace std;
 
 void limparTerminal();
 int ver_adj(vector<vector<int>>&G, int V_Prox, int v);
+void fleury(vector<vector<int>>&G, vector<int>&G_Visitado, int e, int v);
 
 int main() {
     int v,e;
 
     limparTerminal();
-    printf("Obs -> Insira um Grafo nas seguintes condicoes:\n* Quantidade de arestas de cada vertices tem que ser par.\n* Grafo conexo.\n\n");
+    printf("Obs -> Insira um Grafo nas seguintes condicoes:\n* Quantidade de arestas de cada vertices tem que ser par.\n* Grafo conexo.\n* Os vertices vao de 1 ate n\n\n");
     printf("Escreva a quantidade de vertices(v) e quantidade de arestas(e) do Grafo(G): ");
     cin >> v >> e;
-
     vector<vector<int>> G(v, vector<int>(v, 0));
 
+    // Faz a ligação das arestas entre os vertices
     for(int i = 0; i < e; i++)
     {
         printf("Escreva as arestas, do vertice inicial para o vertice final.\n");
@@ -30,12 +31,24 @@ int main() {
     }
 
     vector<int> G_Visitado;
-    int V_Atual = 0, i, teste;
+    //Codigo de fleury
+    fleury(G, G_Visitado, e, v);
 
+    for (int i = 0; i < G_Visitado.size(); i++)
+    {
+        cout << G_Visitado[i] + 1 << ' ';
+    }
+    
+}
+
+void fleury(vector<vector<int>>&G, vector<int>&G_Visitado, int e, int v) {
+    int V_Atual = 0, i;
     G_Visitado.push_back(V_Atual);
 
+    //Enquanto a quantidade de grafos visitados for menor que o numero de arestas + 1
     while(G_Visitado.size() < e+1)
     { 
+        //Percorrendo o Grafo
         for(i = 0; i < v; i++)
         {   
             if(G[V_Atual][i])
@@ -52,14 +65,9 @@ int main() {
             }
         }
     }
-
-    for (int i = 0; i < G_Visitado.size(); i++)
-    {
-        cout << G_Visitado[i] + 1 << ' ';
-    }
-    
 }
 
+//Funcao de ver a quantidade de adj de um vertice
 int ver_adj(vector<vector<int>>&G, int V_Prox, int v) {
     int qtd_adj = 0;
     for(int i = 0; i < v; i++)  
