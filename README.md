@@ -1,5 +1,9 @@
 # Código de fleury
 
+![image](https://github.com/JosuePimentel/fleury/assets/65745573/8c9531d4-a6f0-4eb4-aec4-36986e3372ad)
+
+---
+
 ## Features
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=JosuePimentel&repo=fleury&show_owner=true&theme=dark&locale=pt-br&icon_color=true)](https://github.com/JosuePimentel/fleury)
 
