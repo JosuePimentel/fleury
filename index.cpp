@@ -35,11 +35,12 @@ int main() {
     fleury(G, G_Visitado, e, v);
 
     //Escreve o caminho encontrado
+    printf("Caminho euleriano encontrado: ");
     for (int i = 0; i < G_Visitado.size(); i++)
     {
-        cout << G_Visitado[i] + 1 << ' ';
+        printf("%i ", G_Visitado[i] + 1);
     }
-    
+    cout << endl;
 }
 
 void fleury(vector<vector<int>>&G, vector<int>&G_Visitado, int e, int v) {
