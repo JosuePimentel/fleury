@@ -30,10 +30,11 @@ int main() {
         limparTerminal();
     }
 
-    vector<int> G_Visitado;
     //Codigo de fleury
+    vector<int> G_Visitado;
     fleury(G, G_Visitado, e, v);
 
+    //Escreve o caminho encontrado
     for (int i = 0; i < G_Visitado.size(); i++)
     {
         cout << G_Visitado[i] + 1 << ' ';
@@ -48,7 +49,7 @@ void fleury(vector<vector<int>>&G, vector<int>&G_Visitado, int e, int v) {
     //Enquanto a quantidade de grafos visitados for menor que o numero de arestas + 1
     while(G_Visitado.size() < e+1)
     { 
-        //Percorrendo o Grafo
+        //Percorrendo as arestas do Vertice Atual
         for(i = 0; i < v; i++)
         {   
             if(G[V_Atual][i])
