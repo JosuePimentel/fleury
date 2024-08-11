@@ -6,8 +6,5 @@
 ## 📑 Descrição
 Código de Huffman feito para um trabalho do curso de Ciências da Computação da faculdade Instituto Federal Goiano - Campus Rio Verde. 
 
-## 🔗 Links
-[![Blog](https://img.shields.io/badge/Ver%20Projeto-444?style=for-the-badge&url=https://countries-of-world.vercel.app/)](https://countries-of-world.vercel.app/)
-
 ## 🔨 Créditos
 [![Blog](https://img.shields.io/badge/JosuePimentel-444?logo=github&style=for-the-badge&url=https://github.com/JosuePimentel)](https://github.com/JosuePimentel)
